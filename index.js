@@ -11,12 +11,11 @@ async function run() {
     const db = client.db("testDB");
     const collection = db.collection("users");
 
-    const result = await collection.insertOne({
-      name: "Fahim",
-      age: 20
-    });
+    await collection.insertOne({ name: "Fahim" });
 
-    console.log("Data inserted:", result);
+    console.log("Data inserted ✅");
+  } catch (err) {
+    console.log(err);
   } finally {
     await client.close();
   }
